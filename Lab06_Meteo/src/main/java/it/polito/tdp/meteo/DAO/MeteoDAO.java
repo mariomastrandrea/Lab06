@@ -9,21 +9,26 @@ import java.util.List;
 
 import it.polito.tdp.meteo.model.Rilevamento;
 
-public class MeteoDAO {
+public class MeteoDAO 
+{
 	
-	public List<Rilevamento> getAllRilevamenti() {
+	public List<Rilevamento> getAllRilevamenti() 
+	{
+		//TODO: controllare implementazione metodo 
 
 		final String sql = "SELECT Localita, Data, Umidita FROM situazione ORDER BY data ASC";
 
 		List<Rilevamento> rilevamenti = new ArrayList<Rilevamento>();
 
-		try {
+		try 
+		{
 			Connection conn = ConnectDB.getConnection();
 			PreparedStatement st = conn.prepareStatement(sql);
 
 			ResultSet rs = st.executeQuery();
 
-			while (rs.next()) {
+			while (rs.next()) 
+			{
 
 				Rilevamento r = new Rilevamento(rs.getString("Localita"), rs.getDate("Data"), rs.getInt("Umidita"));
 				rilevamenti.add(r);
@@ -32,17 +37,18 @@ public class MeteoDAO {
 			conn.close();
 			return rilevamenti;
 
-		} catch (SQLException e) {
+		} 
+		catch (SQLException sqle) 
+		{
 
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			sqle.printStackTrace();
+			throw new RuntimeException(sqle);
 		}
 	}
 
-	public List<Rilevamento> getAllRilevamentiLocalitaMese(int mese, String localita) {
-
+	public List<Rilevamento> getAllRilevamentiLocalitaMese(int mese, String localita) 
+	{
+		//TODO: implementare metodo DAO
 		return null;
 	}
-
-
 }

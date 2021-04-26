@@ -1,25 +1,35 @@
 package it.polito.tdp.meteo.DAO;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConnectDB {
+import com.zaxxer.hikari.HikariDataSource;
+
+public class ConnectDB
+{
+	private static final String jdbcUrl = "jdbc:mariadb://localhost/meteo";
+	private static final String user = "root";
+	private static final String password = "root";
+	private static HikariDataSource dataSource = new HikariDataSource();
 	
-	// check user e password
-	static private final String jdbcUrl = "jdbc:mysql://localhost/meteo?user=root&password=root";
-	
+	static
+	{
+		dataSource.setJdbcUrl(jdbcUrl);
+		dataSource.setUsername(user);
+		dataSource.setPassword(password);
+	}
 
-	public static Connection getConnection() {
-
-		try {
-				Connection connection = DriverManager.getConnection(jdbcUrl);
-				return connection;
-
-		} catch (SQLException e) {
-
-			e.printStackTrace();
-			throw new RuntimeException("Cannot get a connection " + jdbcUrl, e);
+	public static Connection getConnection() 
+	{
+		try 
+		{
+			Connection connection = dataSource.getConnection();
+			return connection;
+		} 
+		catch (SQLException sqle) 
+		{
+			sqle.printStackTrace();
+			throw new RuntimeException("Cannot get a connection to: " + jdbcUrl, sqle);
 		}
 	}
 

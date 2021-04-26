@@ -12,8 +12,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 
-public class FXMLController {
-
+public class FXMLController 
+{
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
 
@@ -33,22 +33,24 @@ public class FXMLController {
     private TextArea txtResult; // Value injected by FXMLLoader
 
     @FXML
-    void doCalcolaSequenza(ActionEvent event) {
+    void doCalcolaSequenza(ActionEvent event) 
+    {
 
     }
 
     @FXML
-    void doCalcolaUmidita(ActionEvent event) {
+    void doCalcolaUmidita(ActionEvent event) 
+    {
 
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
-    void initialize() {
+    void initialize() 
+    {
         assert boxMese != null : "fx:id=\"boxMese\" was not injected: check your FXML file 'Scene.fxml'.";
         assert btnUmidita != null : "fx:id=\"btnUmidita\" was not injected: check your FXML file 'Scene.fxml'.";
         assert btnCalcola != null : "fx:id=\"btnCalcola\" was not injected: check your FXML file 'Scene.fxml'.";
         assert txtResult != null : "fx:id=\"txtResult\" was not injected: check your FXML file 'Scene.fxml'.";
-
     }
 }
 

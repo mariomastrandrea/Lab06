@@ -4,10 +4,10 @@ import java.util.List;
 
 import it.polito.tdp.meteo.model.Rilevamento;
 
-public class TestMeteoDAO {
-
-	public static void main(String[] args) {
-		
+public class TestMeteoDAO 
+{
+	public static void main(String[] args) 
+	{	
 		MeteoDAO dao = new MeteoDAO();
 
 		List<Rilevamento> list = dao.getAllRilevamenti();
@@ -25,8 +25,6 @@ public class TestMeteoDAO {
 //		
 //		System.out.println(dao.getAllRilevamentiLocalitaMese(5, "Torino"));
 //		System.out.println(dao.getAvgRilevamentiLocalitaMese(5, "Torino"));
-		
-
+	
 	}
-
 }
