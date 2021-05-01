@@ -1,5 +1,6 @@
 package it.polito.tdp.meteo;
 
+import it.polito.tdp.meteo.model.MeteoModel;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,10 +17,9 @@ public class EntryPoint extends Application
         Parent root = loader.load();
         Scene scene = new Scene(root);
 
-        @SuppressWarnings("unused")
 		FXMLController controller = loader.getController();
-        // MyModel newModel = new MyModel();
-        // controller.setModel(newModel);
+        MeteoModel model = new MeteoModel();
+        controller.setModel(model);
         
         stage.setTitle("Lab06 - Meteo");
         stage.setScene(scene);

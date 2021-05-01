@@ -10,10 +10,11 @@ public class ConnectDB
 	private static final String jdbcUrl = "jdbc:mariadb://localhost/meteo";
 	private static final String user = "root";
 	private static final String password = "root";
-	private static HikariDataSource dataSource = new HikariDataSource();
+	private static HikariDataSource dataSource;
 	
 	static
 	{
+		dataSource = new HikariDataSource();
 		dataSource.setJdbcUrl(jdbcUrl);
 		dataSource.setUsername(user);
 		dataSource.setPassword(password);
@@ -30,6 +31,21 @@ public class ConnectDB
 		{
 			sqle.printStackTrace();
 			throw new RuntimeException("Cannot get a connection to: " + jdbcUrl, sqle);
+		}
+	}
+	
+	public static void close(AutoCloseable... resources) throws SQLException
+	{
+		for(var x : resources)
+		{
+			try
+			{
+				x.close();
+			}
+			catch(Exception e)
+			{
+				throw new SQLException("Error closing resource: " + x.toString(), e);
+			}
 		}
 	}
 

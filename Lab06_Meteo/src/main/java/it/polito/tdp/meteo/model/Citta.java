@@ -4,14 +4,15 @@ import java.util.List;
 
 public class Citta 
 {	
-	private String nome;
-	private List<Rilevamento> rilevamenti;
+	private final String nome;
+	private final List<Rilevamento> rilevamenti;
 	private int counter = 0;
 	
 
 	public Citta(String nome) 
 	{
 		this.nome = nome;
+		this.rilevamenti = null;
 	}
 	
 	public Citta(String nome, List<Rilevamento> rilevamenti) 
@@ -22,27 +23,17 @@ public class Citta
 
 	public String getNome() 
 	{
-		return nome;
-	}
-
-	public void setNome(String nome) 
-	{
-		this.nome = nome;
+		return this.nome;
 	}
 
 	public List<Rilevamento> getRilevamenti() 
 	{
-		return rilevamenti;
-	}
-
-	public void setRilevamenti(List<Rilevamento> rilevamenti) 
-	{
-		this.rilevamenti = rilevamenti;
+		return this.rilevamenti;
 	}
 
 	public int getCounter() 
 	{
-		return counter;
+		return this.counter;
 	}
 
 	public void setCounter(int counter) 
@@ -85,6 +76,6 @@ public class Citta
 	@Override
 	public String toString() 
 	{
-		return nome;
+		return this.nome;
 	}
 }
