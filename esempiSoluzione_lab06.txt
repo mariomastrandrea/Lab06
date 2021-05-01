@@ -1,0 +1,31 @@
+Tatiana, [23 Apr 2021 at 12:38:41]:
+Ne avevo mandati alcuni durante il lab su zoom, eccoli
+
+Dati del mese 3
+Città Genova: umidità 68,900000
+Città Milano: umidità 77,963000
+Città Torino: umidità 75,451600
+Sequenza ottima per il mese 3
+[Torino, Torino, Torino, Torino, Torino, Genova, Genova, Genova, Genova, Genova, Genova, Milano, Milano, Milano, Milano]
+Costo: 1305.0
+Dati del mese 8
+Città Genova: umidità 58,903200
+Città Milano: umidità 63,838700
+Città Torino: umidità 65,774200
+Sequenza ottima per il mese 8
+[Milano, Milano, Milano, Milano, Milano, Milano, Genova, Genova, Genova, Genova, Genova, Genova, Torino, Torino, Torino]
+Costo: 1052.0
+Dati del mese 5
+Città Genova: umidità 71,322600
+Città Milano: umidità 70,612900
+Città Torino: umidità 68,354800
+Sequenza ottima per il mese 5
+[Genova, Genova, Genova, Genova, Genova, Genova, Torino, Torino, Torino, Torino, Torino, Torino, Milano, Milano, Milano]
+Costo: 1235.0
+Dati del mese 11
+Città Genova: umidità 60,233300
+Città Milano: umidità 83,600000
+Città Torino: umidità 75,333300
+Sequenza ottima per il mese 11
+[Milano, Milano, Milano, Torino, Torino, Torino, Torino, Torino, Torino, Genova, Genova, Genova, Genova, Genova, Genova]
+Costo: 1218.0
