@@ -1,24 +1,14 @@
 package it.polito.tdp.meteo.model;
 
-import java.util.List;
-
 public class Citta 
 {	
 	private final String nome;
-	private final List<Rilevamento> rilevamenti;
 	private int counter = 0;
 	
 
 	public Citta(String nome) 
 	{
 		this.nome = nome;
-		this.rilevamenti = null;
-	}
-	
-	public Citta(String nome, List<Rilevamento> rilevamenti) 
-	{
-		this.nome = nome;
-		this.rilevamenti = rilevamenti;
 	}
 
 	public String getNome() 
@@ -26,24 +16,24 @@ public class Citta
 		return this.nome;
 	}
 
-	public List<Rilevamento> getRilevamenti() 
-	{
-		return this.rilevamenti;
-	}
-
 	public int getCounter() 
 	{
 		return this.counter;
-	}
-
-	public void setCounter(int counter) 
-	{
-		this.counter = counter;
 	}
 	
 	public void increaseCounter() 
 	{
 		this.counter += 1;
+	}
+	
+	public void decreaseCounter()
+	{
+		this.counter -= 1;
+	}
+	
+	public boolean exceededDays(int days)
+	{
+		return this.counter > days;
 	}
 
 	@Override

@@ -4,19 +4,19 @@ import java.time.LocalDate;
 
 public class Rilevamento 
 {
-	private final String localita;
+	private final Citta localita;
 	private final LocalDate data;
 	private final int umidita;
 
 	
-	public Rilevamento(String localita, LocalDate data, int umidita) 
+	public Rilevamento(Citta localita, LocalDate data, int umidita) 
 	{
 		this.localita = localita;
 		this.data = data;
 		this.umidita = umidita;
 	}
 
-	public String getLocalita() 
+	public Citta getCitta() 
 	{
 		return this.localita;
 	}
@@ -28,6 +28,11 @@ public class Rilevamento
 
 	public int getUmidita() 
 	{
-		return umidita;
+		return this.umidita;
+	}
+	
+	public int getCosto()
+	{
+		return this.umidita;
 	}
 }

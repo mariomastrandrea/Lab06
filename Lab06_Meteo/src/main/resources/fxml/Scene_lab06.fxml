@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.meteo.FXMLController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.meteo.FXMLController">
    <top>
       <Label text=" Previsioni -  ilMeteo.it" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -26,6 +26,12 @@
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="600.0" spacing="15.0">
                <children>
+                  <Label text="Anno">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="yearsComboBox" onAction="#handleYearChoice" />
                   <Label text="Mese">
                      <HBox.margin>
                         <Insets />
@@ -37,7 +43,7 @@
                   <ComboBox fx:id="monthsComboBox" onAction="#handleMonthChoice" />
                   <Button fx:id="umiditaButton" disable="true" mnemonicParsing="false" onAction="#handleCalcolaUmiditaMedia" prefWidth="160.0" text="calcola umidità media">
                      <HBox.margin>
-                        <Insets left="15.0" />
+                        <Insets left="20.0" />
                      </HBox.margin>
                      <font>
                         <Font size="14.0" />
@@ -51,12 +57,27 @@
                   <Insets left="10.0" />
                </padding>
             </HBox>
-            <HBox alignment="CENTER" spacing="20.0">
+            <HBox alignment="CENTER" spacing="15.0">
                <children>
+                  <Label text="Dal">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="firstDayComboBox" disable="true" onAction="#handleFirstDayChoice" />
+                  <Label text="num giorni">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="numGiorniComboBox" disable="true" onAction="#handleNumGiorniChoice" />
                   <Label text="Sequenza ottimale delle città">
                      <font>
                         <Font size="14.0" />
-                     </font></Label>
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin></Label>
                   <Button fx:id="calcolaButton" disable="true" mnemonicParsing="false" onAction="#handleCalcolaSequenzaOttimale" prefWidth="80.0" text="Calcola">
                      <HBox.margin>
                         <Insets />
